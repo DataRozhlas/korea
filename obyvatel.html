@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Méně lidí, více vojáků</title>
+</head>
+
+
+<body>
+<div id="obyvatel" style="height:175px;"></div>
+
+<div id="armada"></div>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script>
+
+Highcharts.setOptions({
+    lang: {
+        numericSymbols: [' tis.', ' mil.']
+    }
+});
+
+Highcharts.chart('obyvatel', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Severní Korea má poloviční počet obyvatel...'
+    },
+
+    yAxis: {
+        title: {
+            text: null
+        }
+    },
+    xAxis: {
+        categories: ['počet obyvatel v roce 2018']
+    },
+    credits: {
+    	text: 'Zdroj: Organizace spojených národů',
+    	href: 'https://esa.un.org/unpd/wpp/DataQuery/'
+   },
+    series: [{
+            name: 'Jižní Korea',
+            color: '#0047A0',
+        data: [51164435]
+    },
+    {
+    name: 'Severní Korea',
+    color: '#f62018',
+    data: [25610672]
+    }]
+});
+
+Highcharts.chart('armada', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: '... ale téměř dvakrát početnější armádu'
+    },
+    xAxis: {
+        categories: ['celkem vojáků v aktivní službě', 'pozemní vojsko', 'námořnictvo', 'letectvo', 'polovojenské jednotky', 'zálohy']
+    },
+    tooltip: {
+        shared: true,
+        valueSuffix: ' mužů',
+    },
+    credits: {
+        text: 'Zdroj: The Military Balance 2017, ISS ',
+        href: 'https://www.iiss.org/en/publications/military-s-balance'
+   },
+    series: [{
+            name: 'Jižní Korea',
+            color: '#0047A0',
+        data: [1190000,1020000,60000,110000,189000,5700000]
+    },
+    {
+    name: 'Severní Korea',
+    color: '#f62018',
+    data: [630000,495000,70000,65000,4500,4500000]
+    }]
+});
+</script>
+</body>
+</html>
