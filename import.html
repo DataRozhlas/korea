@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Import export</title>
+</head>
+
+
+<body>
+
+<div id="export"></div>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script>
+
+
+Highcharts.chart('export', {
+    chart: {
+        type: 'bar'
+    },
+    plotOptions: {
+        series: {
+        dataLabels: {
+            enabled: true
+        }
+        }
+    },
+    title: {
+        text: 'Jižní Korea vyváží zboží a služby, které mají tisíckrát vyšší hodnotu než severokorejský export'
+    },
+    subtitle: {
+        text: 'Zatímco Jižní Korea vyváží hlavně elektroniku, automobily a lodě, hlavním severokorejským artiklem je uhlí a textil
+    },
+    xAxis: {
+        categories: ['vývoz', 'dovoz']
+    },
+    tooltip: {
+        shared: true,
+        valueSuffix: ' miliard dolarů',
+    },
+    yAxis: {
+        title: {
+            text: 'miliardy dolarů'
+        }
+    },
+    credits: {
+        text: 'Zdroj: The Military Balance 2017, ISS ',
+        href: 'https://www.iiss.org/en/publications/military-s-balance'
+   },
+    series: [{
+            name: 'Jižní Korea',
+            color: '#0047A0',
+        data: [483,389]
+    },
+    {
+    name: 'Severní Korea',
+    color: '#f62018',
+    data: [2.83,3.47]
+    },
+    {
+    name: 'Česká republika',
+    color: 'black',
+    visible: false,
+    data: [160,138]
+    }]
+});
+</script>
+</body>
+</html>
