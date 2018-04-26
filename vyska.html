@@ -6,13 +6,13 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Import export</title>
+	<title>Výška</title>
 </head>
 
 
 <body>
 
-<div id="export"></div>
+<div id="vyska"></div>
 
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -20,54 +20,54 @@
 <script>
 
 
-Highcharts.chart('export', {
+Highcharts.chart('vyska', {
     chart: {
-        type: 'bar'
+        type: 'column'
     },
     plotOptions: {
         series: {
         dataLabels: {
-            enabled: true
+            enabled: true,
+            format: '{y} cm'
         }
         }
     },
     title: {
-        text: 'Jižní Korea vyváží zboží a služby, které mají tisíckrát vyšší hodnotu než severokorejský export'
+        text: 'Korejci a Korejky ze severu jsou v průměru o několik centimetrů nižší než jejich příbuzní z jihu'
     },
     subtitle: {
-        text: 'Zatímco Jižní Korea vyváží hlavně elektroniku, automobily a lodě, hlavním severokorejským artiklem je uhlí a textil'
+        text: 'Oficiální údaje ze severní Koreje nejsou k dispozici, jde o měření více než tisíce uprchlíků, kteří se dostali na jih'
     },
     xAxis: {
-        categories: ['vývoz', 'dovoz']
+        categories: ['muži', 'ženy']
     },
     tooltip: {
-        shared: true,
-        valueSuffix: ' miliard dolarů',
+        valueSuffix: ' cm',
     },
     yAxis: {
         title: {
-            text: 'miliardy dolarů'
+            text: 'centimetry'
         }
     },
     credits: {
-        text: 'Zdroj: OEC',
-        href: 'https://atlas.media.mit.edu/en/'
+        text: 'Zdroj: Korejský statistický úřad',
+        href: 'http://kosis.kr/statHtml/statHtml.do?orgId=144&tblId=TX_14401_A041'
    },
     series: [{
             name: 'Jižní Korea',
             color: '#0047A0',
-        data: [483,389]
+        data: [173.5,160.4]
     },
     {
     name: 'Severní Korea',
     color: '#f62018',
-    data: [2.83,3.47]
+    data: [165.6,154.9]
     },
     {
     name: 'Česká republika',
     color: 'black',
     visible: false,
-    data: [160,138]
+    data: [180.31,167.22]
     }]
 });
 </script>
