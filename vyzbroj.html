@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Počet zbraní</title>
+</head>
+
+
+<body>
+
+<div id="zbrane"></div>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script>
+
+Highcharts.setOptions({
+    lang: {
+        numericSymbols: [' tis.', ' mil.']
+    }
+});
+
+Highcharts.chart('zbrane', {
+    chart: {
+        type: 'bar'
+    },
+    plotOptions: {
+        series: {
+        dataLabels: {
+            enabled: true
+        }
+        }
+    },
+    title: {
+        text: 'Severní Korea má více zbraní, rozdíl je ale také v jejich stáří a kvalitě'
+    },
+    xAxis: {
+        categories: ['tanky', 'letadla', 'ponorky', 'děla']
+    },
+    tooltip: {
+        shared: true,
+        valueSuffix: ' kusů',
+    },
+    yAxis: {
+        title: {
+            text: 'kusy'
+        }
+    },
+    credits: {
+        text: 'Zdroj: The Military Balance 2017, ISS ',
+        href: 'https://www.iiss.org/en/publications/military-s-balance'
+   },
+    series: [{
+            name: 'Jižní Korea',
+            color: '#0047A0',
+        data: [2434,567,23,11000]
+    },
+    {
+    name: 'Severní Korea',
+    color: '#f62018',
+    data: [3500,545,73,21100]
+    }]
+});
+</script>
+</body>
+</html>
